@@ -1,0 +1,312 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root{
+    --main-color:red;
+    --black:black;
+    --bg:black;
+    --border:.1rem solid rgba(255,255,255,.3);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    transition: .2s linear;
+    /* overflow-x: hidden; */
+}
+
+html{
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+/* html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
+} */
+
+
+
+
+
+.header1{
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2.5rem 3%;
+    border-bottom: var(--border);
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+    height:50px;
+}
+
+
+.header1 .logo .logo-text{
+    font-size: 3rem;
+    color: white;
+    margin-left:5px;
+}
+.header1 .logo .logo-text span{
+    color: var(--main-color);
+}
+
+.header1 .navbar1 a{
+    margin:0 0.5rem;
+    font-size: 1.6rem;
+    color:#fff;
+}
+
+.header1 .navbar1 a:hover{
+    color:white;
+    border-bottom: .1rem solid white;
+    padding-bottom: .5rem;
+    text-decoration: none;
+}
+
+.header1 .icons div{
+    color:#fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.header1 .icons div:hover{
+    color:var(--main-color);
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header1 .search-form{
+    position: absolute;
+    top:115%; right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header1 .search-form.active{
+    transform: scaleY(1);
+}
+
+.header1 .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:1rem;
+    text-transform: none;
+}
+
+.header1 .search-form label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color:var(--black);
+}
+
+.header1 .search-form label:hover{
+    color:var(--main-color);
+}
+
+.header1 .cart-items-container{
+    position: absolute;
+    top:100%; right: -100%;
+    height: calc(100vh - 9.5rem);
+    width: 35rem;
+    background: #fff;
+    padding:0 1.5rem;
+}
+
+.header1 .cart-items-container.active{
+    right: 0;
+}
+
+.header1 .cart-items-container .cart-item{
+    position: relative;
+    margin:2rem 0;
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+}
+
+.header1 .cart-items-container .cart-item .fa-times{
+    position: absolute;
+    top:1rem; right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.header1 .cart-items-container .cart-item .fa-times:hover{
+    color:var(--main-color);
+}
+
+.header1 .cart-items-container .cart-item img{
+    height: 7rem;
+}
+
+.header1 .cart-items-container .cart-item .content h3{
+    font-size: 2rem;
+    color:var(--black);
+    padding-bottom: .5rem;
+}
+
+.header1 .cart-items-container .cart-item .content .price{
+    font-size: 1.5rem;
+    color:var(--main-color);
+}
+
+.header1 .cart-items-container .btn{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header1 .navbar1{
+        position: absolute;
+        top:100%; right: -100%;
+        background: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+
+    .header1 .navbar1.active{
+        right:0;
+        
+    }
+
+    .header1 .navbar1 a{
+        color:var(--black);
+        display: block;
+        margin:1.5rem;
+        padding:.5rem;
+        font-size: 2rem;
+    }
+
+    .header1 .search-form{
+        width: 90%;
+        right: 2rem;
+    }
+
+    
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+
+
+</style>
+
+
+<!-- header section starts  -->
+
+<header class="header1" style="position: sticky;">
+
+  <a href="#" class="logo">
+      <h1 class="logo-text"><span>Leuke</span>Aware</h1>
+  </a>
+
+  <nav class="navbar1">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'DR' %}">Blood Donation</a>
+      <a href="#">Earn Badges!</a>
+      <a href="{% url 'blog' %}">Blogs</a>
+      <a href="{% url 'about' %}">About Us</a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'profile' %}">Profile</a>
+      <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <a href="{% url 'LS' %}">Login/SignUp</a>
+      {% endif %}
+  </nav>
+
+  <div class="icons">
+      <div class="fas fa-bars" id="menu-btn"></div>
+  </div>
+
+
+</header>
+
+
+<script>
+
+let navbar = document.querySelector('.navbar1');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let searchForm = document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick = () =>{
+    searchForm.classList.toggle('active');
+    navbar.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+let cartItem = document.querySelector('.cart-items-container');
+
+document.querySelector('#cart-btn').onclick = () =>{
+    cartItem.classList.toggle('active');
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+</script>
+
+
+
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong>{{message}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+
+<!-- font awesome cdn link  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+<script src="https://kit.fontawesome.com/64c6f68e46.js" crossorigin="anonymous"></script>
