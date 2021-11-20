@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def tasks(request):
     profile = Profile.objects.get(user = request.user)
     rec_count = len(request.user.rec_to.all())
