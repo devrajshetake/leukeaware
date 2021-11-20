@@ -59,22 +59,24 @@ html::-webkit-scrollbar-thumb{
     font-size: 3rem;
     color: white;
     margin-left:5px;
+    text-decoration:none;
 }
 .header1 .logo .logo-text span{
     color: var(--main-color);
+    text-decoration:none;
 }
 
 .header1 .navbar1 a{
     margin:0 0.5rem;
     font-size: 1.6rem;
     color:#fff;
+    text-decoration:none;
 }
 
 .header1 .navbar1 a:hover{
     color:white;
     border-bottom: .1rem solid white;
     padding-bottom: .5rem;
-    text-decoration: none;
 }
 
 .header1 .icons div{
@@ -235,14 +237,14 @@ html::-webkit-scrollbar-thumb{
 
 <header class="header1" style="position: sticky;">
 
-  <a href="#" class="logo">
+  <a  class="logo">
       <h1 class="logo-text"><span>Leuke</span>Aware</h1>
   </a>
 
   <nav class="navbar1">
       <a href="{% url 'home' %}">Home</a>
       <a href="{% url 'DR' %}">Blood Donation</a>
-      <a href="#">Earn Badges!</a>
+      <a href="{% url 'tasks' %}">Earn Badges!</a>
       <a href="{% url 'blog' %}">Blogs</a>
       <a href="{% url 'about' %}">About Us</a>
       {% if user.is_authenticated %}

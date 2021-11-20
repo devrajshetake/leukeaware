@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-# @login_required(login_url='login')
+@login_required(login_url='login')
 def tasks(request):
     profile = Profile.objects.get(user = request.user)
     rec_count = len(request.user.rec_to.all())
@@ -18,3 +18,6 @@ def tasks(request):
     context = {'ref_code': profile.code, 'rec_count': rec_count, 'donated':donated}
 
     return render(request, 'tasks/tasks.html', context)
+
+def popup(request):
+    return render(request,"tasks/popup.html")

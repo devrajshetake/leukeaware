@@ -35,11 +35,11 @@
             width="700" height="500" loading="lazy">
         </div>
         <div class="col-lg-6">
-          <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
+          <h1 class="display-5 fw-bold lh-1 mb-3">A small step towards deleting Blood Cancer.</h1>
           <p class="lead">We campaign for fair access to treatment and to raise awareness of the vital signs and symptoms of a leukaemia diagnosis as well as the most current information on treatment Blogs are available.We also support blood donation camps.</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+            <!-- <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
  <div class="d-flex border-bottom">
   <h2 class="pb-2  text-capitalize fw-bolder">The Badges Info </h2>
   <h4 class="pb-2 ms-auto  text-capitalize fw-bolder">
-      <a target="_blank" href="{% url 'tasks' %}" ><i class='bx bxs-right-arrow-circle' ></i></a>
+      <a  href="{% url 'tasks' %}" ><i class='bx bxs-right-arrow-circle' ></i></a>
     Explore Badges </h4>
  </div>
 
@@ -65,16 +65,16 @@
           style="background-image: url('unsplash-photo-1.jpg'); background-color: #F48C06;;">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
 
-
+            <img class="img-fluid" src="{% static 'SVGs/Badge__LeukeShare.svg' %}" width="280px" alt="">
           </div>
         </div>
       </div>
 
       <div class="col badge__card">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-success rounded-5 shadow-lg"
-          style="background-image: url('unsplash-photo-2.jpg');">
+        <div class="card card-cover h-100 overflow-hidden text-white  rounded-5 shadow-lg"
+          style="background-image: url('unsplash-photo-2.jpg'); background-color:#333333;">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-
+            <img class="img-fluid" src="{% static 'SVGs/Badge__LIFESAVER.svg' %}" width="280px" alt="">
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@
         <div class="card card-cover h-100 overflow-hidden text-white bg-danger rounded-5 shadow-lg"
           style="background-image: url('unsplash-photo-3.jpg');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-            
+            <img class="img-fluid" src="{% static 'SVGs/Badge__DKMS.svg' %}" width="280px" alt="">
             </ul>
           </div>
         </div>
@@ -103,10 +103,10 @@
   <div class="container-fluid  d-flex justify-content-center align-content-center flex-wrap  mt-4 pt-2">
     <div class="wrapper">
       <div class="card front-face">
-        <img src="../assets/img/ug-10.jpg">
+        <img src="{% static 'About/avatars/nikita_dp.jpg' %}">
       </div>
       <div class="card back-face">
-        <img src="../assets/img/ug-10.jpg">
+        <img src="{% static 'About/avatars/nikita.png' %}">
         <div class="info">
           <div class="title">
             Nikita Karande
@@ -118,17 +118,17 @@
         <ul>
 
           <a href="#" ><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-github"></i></a>
         </ul>
       </div>
     </div>
     <div class="wrapper">
       <div class="card front-face">
-        <img src="../assets/img/ug-12.jpg">
+        <img src="{% static 'About/avatars/neeraj_dp.jpg' %}">
       </div>
       <div class="card back-face">
-        <img src="../assets/img/ug-12.jpg">
+        <img src="{% static 'About/avatars/neeraj.png' %}">
         <div class="info">
           <div class="title">
             Neeraj Bukane
@@ -139,18 +139,18 @@
         </div>
         <ul>
 
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/neeraj-bukane-9023b7206/"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/__.neeraj3062.__/"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/NsbTechno"><i class="fab fa-github"></i></a>
         </ul>
       </div>
     </div>
     <div class="wrapper">
       <div class="card front-face">
-        <img src="../assets/img/ug-8.jpg">
+        <img src="{% static 'About/avatars/devraj_dp.jpg' %}">
       </div>
       <div class="card back-face">
-        <img src="../assets/img/ug-8.jpg">
+        <img src="{% static 'About/avatars/devraj.png' %}">
         <div class="info">
           <div class="title">
             Devraj Shetake
@@ -160,19 +160,19 @@
         </div>
         <ul>
 
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/devraj-shetake-439606206/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/devrajshetake/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/devrajshetake" target="_blank"><i class="fab fa-github"></i></a>
         </ul>
       </div>
     </div>
 
     <div class="wrapper">
       <div class="card front-face">
-        <img src="../assets/img/ug-3.jfif">
+        <img src="{% static 'About/avatars/sarvesh_dp.jpg' %}">
       </div>
       <div class="card back-face">
-        <img src="../assets/img/ug-3.jfif">
+        <img src="{% static 'About/avatars/sarvesh.png' %}">
         <div class="info">
           <div class="title">
             Sarvesh Varade
@@ -182,9 +182,9 @@
         </div>
         <ul>
 
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/sarvesh-varade-b586b5213/"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/sarveshvarade/"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/sarvesh873"><i class="fab fa-github"></i></a>
         </ul>
       </div>
     </div>
@@ -221,18 +221,17 @@
 
       <div>
         <i class="fa fa-phone"></i>
-        <p>+91 74**9**258</p>
+        <p>+91 7463978258</p>
       </div>
       <div>
         <i class="fa fa-envelope"></i>
-        <p><a href="mailto:LuekeAware@gmail.com">LuekeAware@gmail.com</a></p>
+        <p><a href="mailto:leukeaware@gmail.com">leukeaware@gmail.com</p>
       </div>
     </div>
     <div class="footer-right">
       <p class="footer-company-about">
-        <span>Lorem, ipsum dolor.</span>
-        <strong>Lueke Aware</strong>Lorem ipsum dolor sit, amet consectetur adipisicing.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in iusto non alias, odio et.
+        <span>A small step towards deleting Blood Cancer.r.</span>
+        <strong>Lueke Aware</strong>We campaign for fair access to treatment and to raise awareness of the vital signs and symptoms of a leukaemia diagnosis as well as the most current information on treatment Blogs are available.We also support blood donation camps.
       </p>
       <div class="footer-icons">
         <a href="#"><i class="fa fa-facebook"></i></a>
@@ -249,6 +248,10 @@
 .card
 {
     background-image: url("{% static 'about/avatar.png' %}");
+}
+
+a {
+  text-decoration: none;
 }
  </style>
 
