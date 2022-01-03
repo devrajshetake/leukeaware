@@ -235,8 +235,20 @@ def about(request):
 def blood_bank(request):
     profiles = extendeduser.objects.all()
     context = {'profiles':profiles} 
-    return render(request, 'users/bloodbank.html', context)
+    return render(request, 'users/bloodbankhome.html', context)
 
+def blood_db(request):
+    if request.method== 'POST':
+       searched = request.POST['searched']
+       res = extendeduser.objects.filter(Q(bldgrp__contains=searched ) )
+       if res:
+                return render(request,'users/bloodbank.html',{'searched':searched ,'profiles':res})         
+       else:
+                return render(request, 'users/bloodbank.html',{'error': "!!!!!!!!!!!!!No user Find with this bloodgroup!!!!!!!!!!!"})
+
+    profiles = extendeduser.objects.all()
+    context = {'profiles':profiles} 
+    return render(request, 'users/bloodbank.html', context)
 
 #################################################################################
 from django.views.generic.base import TemplateView

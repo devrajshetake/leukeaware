@@ -24,6 +24,7 @@ urlpatterns = [
     path('about/',views.blog,name='about'),
     path('editprofile/',views.editprofile,name='editprofile'),
     path('blood-bank',views.blood_bank,name='blood-bank'),
+    path('blood-bank-db',views.blood_db,name='blood-bank-db'),
     path('excel', views.ExcelPageView.as_view(), name='excel'),
     path('export/excel', views.export_users_xls, name='export_excel'),
 

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- =====BOX ICONS===== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="{% static 'bloodbank/style.css' %}" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="l-main">
+      <!--===== HOME =====-->
+      <section class="home" id="home">
+        <div class="home__container bd-grid">
+          <div class="home__img">
+            <img
+              src="{% static 'bloodbank/blood.svg' %}"
+              alt="FUTURE SAVE"
+              data-speed="-1"
+              class="move"
+            />
+          </div>
+
+          <div class="home__data">
+            <h1 class="home__title">
+              Donor Database
+            </h1>
+            <p class="home__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing <br>
+              eaque, inventore earum facere aperiam sequi,<br>
+              Placeat dolore voluptate magni nisi facere?
+            </p>
+            <div class="btns">
+              <div  class="home__button" ><a href="{% url 'blood-bank-db' %}">Database</a></div>
+              <div  class="home__button"><a href="{% url 'logout' %}">Log Out</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
